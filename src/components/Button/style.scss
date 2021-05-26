@@ -1,0 +1,15 @@
+.Button {
+    font-weight: 500;
+    background-color: transparent;
+    border: 1px solid currentColor;
+    padding: 1em;
+    border-radius: 3em;
+    min-width: 64px;
+    cursor: pointer;
+    font-family: inherit;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.432);
+    color: white;
+  }
+}
