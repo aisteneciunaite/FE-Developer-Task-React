@@ -1,0 +1,38 @@
+.PictureCard {
+    color: white;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        display: grid;
+        grid-template-rows: 3fr 1fr;
+        justify-content: center;
+        gap: 2em;
+        padding: 2em;
+        >*:first-child {
+            align-self: flex-end;
+        }
+
+        background-color: rgba(0, 0, 0, 0.329);
+        opacity: 0;
+        transition: .3s opacity ease-in-out;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
