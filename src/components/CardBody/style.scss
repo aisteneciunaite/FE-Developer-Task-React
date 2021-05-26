@@ -1,0 +1,14 @@
+.CardBody {
+   text-align: center;
+
+    h3, p {
+        margin: 0;
+    }
+
+    hr {
+        width: 75px;
+        border: none;
+        border-bottom: 2px solid currentColor;
+    }
+
+}
