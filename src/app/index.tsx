@@ -1,6 +1,6 @@
 import React from 'react'
 import PicturesGrid from './components/PicturesGrid'
-import './App.scss'
+import './index.scss'
 
 function App() {
   return (
