@@ -1,9 +1,11 @@
+@import '../../mixins.scss';
+
 .PictureCard {
     color: white;
     border-radius: 8px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+    box-shadow: var(--card-shaddow);
 
     img {
         display: block;
@@ -13,17 +15,13 @@
     }
 
     &__overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        @include overlay;
 
         display: grid;
         grid-template-rows: 3fr 1fr;
         justify-content: center;
-        gap: 2em;
-        padding: 2em;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
         >*:first-child {
             align-self: flex-end;
         }

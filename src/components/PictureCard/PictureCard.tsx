@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.scss'
+import './PictureCard.scss'
 import CardBody from '../CardBody'
 import Button from '../Button'
 

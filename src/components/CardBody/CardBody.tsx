@@ -1,5 +1,5 @@
 import React from 'react'
-import './style.scss'
+import './CardBody.scss'
 
 interface Props {
   title: string
