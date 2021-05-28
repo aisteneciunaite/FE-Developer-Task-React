@@ -1,8 +1,16 @@
+@import '../../../assets/styles/mixins.scss';
+
 .CardBody {
    text-align: center;
+   overflow: hidden;
 
     h3, p {
         margin: 0;
+        @include nowrap;
+    }
+
+    h3 {
+        text-transform: capitalize;
     }
 
     hr {
