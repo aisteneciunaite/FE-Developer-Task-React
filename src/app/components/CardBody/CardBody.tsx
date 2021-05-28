@@ -2,7 +2,7 @@ import React from 'react'
 import './CardBody.scss'
 
 interface Props {
-  title?: string
+  title?: string | null
   subtitle: string
 }
 
