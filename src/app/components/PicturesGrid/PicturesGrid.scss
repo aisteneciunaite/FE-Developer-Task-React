@@ -6,6 +6,6 @@
     gap: var(--spacing-md);
     padding: var(--spacing-md);
     grid-template-rows: max-content;
-    grid-template-columns: repeat(auto-fit, minmax(300px , 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px , auto));
     justify-content: center;
 }

@@ -14,6 +14,7 @@
     "node-sass": "^6.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-infinite-scroller": "^1.2.4",
     "react-scripts": "4.0.3",
     "typescript": "^4.2.4",
     "unsplash-js": "^7.0.11",
@@ -44,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-infinite-scroller": "^1.2.1",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
