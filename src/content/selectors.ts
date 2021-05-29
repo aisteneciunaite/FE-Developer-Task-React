@@ -1,4 +1,4 @@
-import { State } from './model'
+import { State } from './models'
 
 export const items = (state: State) => state.pictures
 export const loading = (state: State) => state.loading

@@ -1,7 +1,8 @@
 import * as types from './types'
 import unsplash from '../unsplash'
+import { AppDispatch } from '../app/store'
 
-export const fetchContent = (page: number) => async (dispatch: any) => {
+export const fetchContent = (page: number) => async (dispatch: AppDispatch) => {
   dispatch({ type: types.GET_REQUEST })
   setTimeout(async () => {
     try {

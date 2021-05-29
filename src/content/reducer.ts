@@ -1,17 +1,15 @@
-import { AnyAction } from 'redux'
-import { Basic } from 'unsplash-js/dist/methods/photos/types'
 import * as types from './types'
-import { State } from './model'
+import { State, ContentAction, Picture } from './models'
 
 const DEFAULT_STATE: State = {
-  pictures: [] as Basic[],
+  pictures: [] as Picture[],
   loading: false,
   hasNextPage: true,
 }
 
 const contentReducer = (
   state: State = DEFAULT_STATE,
-  action: AnyAction,
+  action: ContentAction,
 ): State => {
   const { type, payload } = action
 
@@ -21,8 +19,8 @@ const contentReducer = (
     case types.GET_SUCCESS:
       return {
         ...state,
-        pictures: [...state.pictures, ...payload.pictures],
-        hasNextPage: payload.hasNextPage,
+        pictures: [...state.pictures, ...(payload?.pictures || [])],
+        hasNextPage: !!payload?.hasNextPage,
         loading: false,
       }
     case types.GET_ERROR:
