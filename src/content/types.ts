@@ -1,0 +1,3 @@
+export const GET_REQUEST = 'CONTENT.GET_REQUEST'
+export const GET_SUCCESS = 'CONTENT.GET_SUCCESS'
+export const GET_ERROR = 'CONTENT.GET_ERROR'
