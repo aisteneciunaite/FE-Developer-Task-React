@@ -41,6 +41,7 @@ export default function PicturesGrid() {
             favorite={isFavoriteById(i.id)}
             toggleFavorite={() => toggleFavoriteById(i.id)}
             link={i.user.links.html}
+            blurHash={i.blur_hash}
           />
         )
       })}

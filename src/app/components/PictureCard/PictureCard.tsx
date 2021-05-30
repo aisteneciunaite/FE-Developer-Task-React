@@ -1,5 +1,6 @@
 import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { Blurhash } from 'react-blurhash'
 import { Heart, ExternalLink } from 'react-feather'
 import clsx from 'clsx'
 import 'react-lazy-load-image-component/src/effects/blur.css'
@@ -16,6 +17,7 @@ interface Props {
   favorite?: boolean
   toggleFavorite: React.MouseEventHandler
   link: string
+  blurHash?: string | null
 }
 
 export default function PictureCard({
@@ -26,6 +28,7 @@ export default function PictureCard({
   favorite,
   toggleFavorite,
   link,
+  blurHash,
 }: Props) {
   const buttonText = favorite ? (
     <>
@@ -36,6 +39,16 @@ export default function PictureCard({
       <Heart size="14" fill="var(--color-accent-2)" /> Favorite
     </>
   )
+  const imagePlaceholder = blurHash ? (
+    <Blurhash
+      hash={blurHash}
+      width={400}
+      height={300}
+      resolutionX={32}
+      resolutionY={32}
+      punch={1}
+    />
+  ) : undefined
 
   return (
     <div className="PictureCard">
@@ -44,6 +57,7 @@ export default function PictureCard({
         alt={alt_text || ''}
         effect="blur"
         wrapperProps={{ style: { display: 'unset' } }}
+        placeholder={imagePlaceholder}
       />
 
       <div className="PictureCard__overlay">
