@@ -1,5 +1,6 @@
 
 @mixin main-container {
+    box-sizing: border-box;
     width: 400px;
     max-width: 100vw;
     min-width: 90vw;
@@ -17,4 +18,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@mixin unstyled-link {
+    text-decoration: none;
+    color: unset;
+}
+
+@mixin outline {
+    outline: var(--color-accent-3) 1px auto;
 }

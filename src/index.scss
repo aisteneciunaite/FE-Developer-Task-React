@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
 
 :root {
+  --app-background:#e7e7e7;
   --spacing-md: 2rem;
-  --card-shaddow: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  --spacing-sm: 1rem;
+
+  --shaddow-sm: 0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12);
+  --shadow-md: 0px 7px 8px -4px rgba(0,0,0,0.2),0px 13px 19px 2px rgba(0,0,0,0.14),0px 5px 24px 4px rgba(0,0,0,0.12);
+
+  --color-dark: #011627;
+  --color-light: #fdfffc;
+  --color-accent-1: #2EC4B6;
+  --color-accent-2: #e71d36;
+  --color-accent-3: #FF9F1C;
 }
 
 body {

@@ -30,7 +30,7 @@ export default function PicturesGrid() {
     >
       {content.map((i) => {
         const { user } = i
-        const author = `${user?.first_name || ''} ${user?.last_name || ''}`
+        const author = `${user.first_name} ${user?.last_name || ''}`
         return (
           <PictureCard
             url={i.urls.small}
@@ -40,6 +40,7 @@ export default function PicturesGrid() {
             key={i.id}
             favorite={isFavoriteById(i.id)}
             toggleFavorite={() => toggleFavoriteById(i.id)}
+            link={i.user.links.html}
           />
         )
       })}

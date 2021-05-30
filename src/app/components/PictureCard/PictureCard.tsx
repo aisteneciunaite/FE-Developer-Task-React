@@ -1,9 +1,10 @@
 import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { Heart } from 'react-feather'
+import { Heart, ExternalLink } from 'react-feather'
 import clsx from 'clsx'
 import 'react-lazy-load-image-component/src/effects/blur.css'
 import './PictureCard.scss'
+import { appName } from '../../../config'
 import CardBody from '../CardBody'
 import Button from '../Button'
 
@@ -14,6 +15,7 @@ interface Props {
   alt_text?: string | null
   favorite?: boolean
   toggleFavorite: React.MouseEventHandler
+  link: string
 }
 
 export default function PictureCard({
@@ -23,6 +25,7 @@ export default function PictureCard({
   alt_text,
   favorite,
   toggleFavorite,
+  link,
 }: Props) {
   const buttonText = favorite ? (
     <>
@@ -30,7 +33,7 @@ export default function PictureCard({
     </>
   ) : (
     <>
-      <Heart size="14" fill="red" /> Favorite
+      <Heart size="14" fill="var(--color-accent-2)" /> Favorite
     </>
   )
 
@@ -54,6 +57,14 @@ export default function PictureCard({
         >
           {buttonText}
         </Button>
+        <a
+          href={`${link}?utm_source=${appName}&utm_medium=referral`}
+          target="_blank"
+          className="PictureCard__link"
+          rel="noreferrer"
+        >
+          <ExternalLink />
+        </a>
       </div>
     </div>
   )

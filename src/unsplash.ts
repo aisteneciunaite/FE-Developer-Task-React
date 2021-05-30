@@ -1,6 +1,7 @@
 import { createApi } from 'unsplash-js'
+import { unsplashKey } from './config'
 
-const accessKey = process.env['REACT_APP_UNSPLASH_KEY'] || ''
+const accessKey = unsplashKey as string
 
 const unsplash = createApi({ accessKey })
 

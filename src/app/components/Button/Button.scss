@@ -1,3 +1,4 @@
+@import '../../assets/styles/mixins.scss';
 .Button {
     font-weight: 500;
     padding: .8em 1.5em;
@@ -5,4 +6,8 @@
     min-width: 64px;
     cursor: pointer;
     font-family: inherit;
+
+    &:focus {
+        @include outline;
+    }
 }
