@@ -15,8 +15,8 @@ export default function PicturesGrid() {
     toggleFavoriteById,
   } = useContent()
 
-  const loadMore = async (page: number) => {
-    !loading && (await fetchContent(page))
+  const loadMore = async () => {
+    !loading && (await fetchContent())
   }
 
   return (

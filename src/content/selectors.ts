@@ -6,3 +6,7 @@ export const hasNextPage = (state: State) => state.hasNextPage
 export const favorites = (state: State) => state.favorites
 export const isFavoriteById = (state: State, id: string): boolean =>
   state.favorites.includes(id)
+export const fetchParams = (state: State) => ({
+  query: state.query,
+  page: state.page,
+})

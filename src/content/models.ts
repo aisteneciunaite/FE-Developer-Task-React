@@ -8,6 +8,8 @@ export interface State {
   loading: boolean
   hasNextPage: boolean
   favorites: string[]
+  query: string
+  page: number
 }
 
 export interface ContentAction extends Action {
@@ -15,5 +17,7 @@ export interface ContentAction extends Action {
     pictures?: Picture[]
     hasNextPage?: boolean
     id?: string
+    query?: string
+    page?: number
   }
 }

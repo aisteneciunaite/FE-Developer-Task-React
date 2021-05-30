@@ -2,12 +2,14 @@ import * as types from './types'
 import unsplash from '../unsplash'
 import { AppDispatch } from '../app/store'
 
-export const fetchContent = (page: number) => async (dispatch: AppDispatch) => {
+export const fetchContent = (page: number, query = 'random') => async (
+  dispatch: AppDispatch,
+) => {
   dispatch({ type: types.GET_REQUEST })
   setTimeout(async () => {
     try {
       const res = await unsplash.search.getPhotos({
-        query: 'random',
+        query,
         page,
         perPage: 30,
         orientation: 'landscape',
@@ -30,4 +32,9 @@ export const fetchContent = (page: number) => async (dispatch: AppDispatch) => {
 export const toggleFavoriteById = (id: string) => ({
   type: types.TOGGLE_FAVORITE,
   payload: { id },
+})
+
+export const search = (query: string) => ({
+  type: types.SEARCH,
+  payload: { query },
 })

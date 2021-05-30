@@ -6,6 +6,8 @@ const DEFAULT_STATE: State = {
   loading: false,
   hasNextPage: true,
   favorites: JSON.parse(localStorage.getItem('favorites') || '[]') as string[],
+  query: 'random',
+  page: 0,
 }
 
 const contentReducer = (
@@ -22,6 +24,7 @@ const contentReducer = (
         ...state,
         pictures: [...state.pictures, ...(payload?.pictures || [])],
         hasNextPage: !!payload?.hasNextPage,
+        page: ++state.page,
         loading: false,
       }
     case types.GET_ERROR:
@@ -35,6 +38,11 @@ const contentReducer = (
         localStorage.setItem('favorites', JSON.stringify(favorites))
         return { ...state, favorites }
       } else return state
+    case types.SEARCH: {
+      if (payload?.query)
+        return { ...state, query: payload.query, pictures: [], page: 0 }
+      else return state
+    }
     default:
       return state
   }
