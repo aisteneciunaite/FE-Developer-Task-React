@@ -8,4 +8,8 @@
     grid-template-rows: max-content;
     grid-template-columns: repeat(auto-fit, minmax(300px , auto));
     justify-content: center;
+
+    &__loader {
+        justify-self: center;
+    }
 }

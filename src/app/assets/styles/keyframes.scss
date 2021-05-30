@@ -1,0 +1,8 @@
+@keyframes phase-out {
+    from {
+        filter: opacity(1);
+    }
+    to {
+        filter: opacity(0);
+    }
+}

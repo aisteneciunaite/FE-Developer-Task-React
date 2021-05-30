@@ -1,8 +1,9 @@
 import React from 'react'
-import PictureCard from '../PictureCard'
-import './PicturesGrid.scss'
-import useContent from '../../hooks/useContent'
 import InfiniteScroll from 'react-infinite-scroller'
+import PictureCard from '../PictureCard'
+import Loader from '../Loader'
+import useContent from '../../hooks/useContent'
+import './PicturesGrid.scss'
 
 export default function PicturesGrid() {
   const {
@@ -25,8 +26,7 @@ export default function PicturesGrid() {
       loadMore={loadMore}
       hasMore={hasNextPage}
       initialLoad={true}
-      // TODO add nicer loader component
-      loader={<div key={0}>Loading ...</div>}
+      loader={<Loader key={0} className="PicturesGrid__loader" />}
     >
       {content.map((i) => {
         const { user } = i
