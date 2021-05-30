@@ -5,7 +5,14 @@ import useContent from '../../hooks/useContent'
 import InfiniteScroll from 'react-infinite-scroller'
 
 export default function PicturesGrid() {
-  const { content, hasNextPage, fetchContent, loading } = useContent()
+  const {
+    content,
+    hasNextPage,
+    fetchContent,
+    loading,
+    isFavoriteById,
+    toggleFavoriteById,
+  } = useContent()
 
   const loadMore = async (page: number) => {
     !loading && (await fetchContent(page))
@@ -21,7 +28,7 @@ export default function PicturesGrid() {
       // TODO add nicer loader component
       loader={<div key={0}>Loading ...</div>}
     >
-      {content.map((i, index) => {
+      {content.map((i) => {
         const { user } = i
         const author = `${user?.first_name || ''} ${user?.last_name || ''}`
         return (
@@ -30,7 +37,9 @@ export default function PicturesGrid() {
             author={author}
             alt_text={i.alt_description}
             name={i.description || i.alt_description}
-            key={index}
+            key={i.id}
+            favorite={isFavoriteById(i.id)}
+            toggleFavorite={() => toggleFavoriteById(i.id)}
           />
         )
       })}

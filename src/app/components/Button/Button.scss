@@ -1,16 +1,8 @@
 .Button {
     font-weight: 500;
-    background-color: transparent;
-    border: 1px solid currentColor;
     padding: .8em 1.5em;
     border-radius: 3em;
     min-width: 64px;
     cursor: pointer;
     font-family: inherit;
-    color: inherit;
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.432);
-    color: white;
-  }
 }

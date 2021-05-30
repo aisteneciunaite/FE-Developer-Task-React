@@ -26,3 +26,8 @@ export const fetchContent = (page: number) => async (dispatch: AppDispatch) => {
     }
   }, 500)
 }
+
+export const toggleFavoriteById = (id: string) => ({
+  type: types.TOGGLE_FAVORITE,
+  payload: { id },
+})

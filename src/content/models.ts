@@ -7,11 +7,13 @@ export interface State {
   pictures: Picture[]
   loading: boolean
   hasNextPage: boolean
+  favorites: string[]
 }
 
 export interface ContentAction extends Action {
   payload?: {
-    pictures: Picture[]
-    hasNextPage: boolean
+    pictures?: Picture[]
+    hasNextPage?: boolean
+    id?: string
   }
 }

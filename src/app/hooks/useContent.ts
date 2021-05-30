@@ -6,14 +6,29 @@ const useContent = () => {
   const items = useSelector(content.selectors.items)
   const loading = useSelector(content.selectors.loading)
   const hasNextPage = useSelector(content.selectors.hasNextPage)
+  const favorites = useSelector(content.selectors.favorites)
   const dispatch = useDispatch()
+
+  const isFavoriteById = (id: string) => favorites.includes(id)
 
   const fetchContent = bindActionCreators(
     content.actions.fetchContent,
     dispatch,
   )
 
-  return { content: items, loading, hasNextPage, fetchContent }
+  const toggleFavoriteById = bindActionCreators(
+    content.actions.toggleFavoriteById,
+    dispatch,
+  )
+
+  return {
+    content: items,
+    loading,
+    hasNextPage,
+    fetchContent,
+    isFavoriteById,
+    toggleFavoriteById,
+  }
 }
 
 export default useContent
